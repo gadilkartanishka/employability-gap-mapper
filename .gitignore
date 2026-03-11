@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/
+.env
+data/raw_jobs/
+data/processed/
+data/syllabi/
