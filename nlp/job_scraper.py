@@ -5,7 +5,7 @@ import os
 import re
 
 # ── Config ──────────────────────────────────────────────────
-SERPAPI_KEY = "REDACTED_SERPAPI_KEY"   # paste your key here
+SERPAPI_KEY = os.getenv("SERPAPI_KEY")  # Set this in your .env or system environment
 OUTPUT_PATH = "data/raw_jobs/jobs_raw.csv"
 
 TARGET_ROLES = [

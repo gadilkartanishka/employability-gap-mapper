@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     CELERY_TASK_ALWAYS_EAGER: bool = os.getenv("CELERY_TASK_ALWAYS_EAGER", "False").lower() == "true"
     
     # NLP / Scraper
-    SERPAPI_KEY: str = os.getenv("SERPAPI_KEY", "REDACTED_SERPAPI_KEY")
+    SERPAPI_KEY: Optional[str] = os.getenv("SERPAPI_KEY")
 
     class Config:
         case_sensitive = True
