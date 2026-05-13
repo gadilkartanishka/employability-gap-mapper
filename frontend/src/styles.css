@@ -2,8 +2,6 @@
 @source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -61,32 +59,6 @@
   --border: oklch(0.88 0.01 282);
   --input: oklch(0.88 0.01 282);
   --ring: oklch(0.56 0.09 288);
-}
-
-.dark {
-  --background: oklch(0.20 0.02 284);
-  --foreground: oklch(0.94 0.02 286);
-  --ink: oklch(0.94 0.02 286);
-  --card: oklch(0.26 0.02 284);
-  --card-foreground: oklch(0.94 0.02 286);
-  --popover: oklch(0.26 0.02 284);
-  --popover-foreground: oklch(0.94 0.02 286);
-  --primary: oklch(0.70 0.10 288);
-  --primary-foreground: oklch(0.20 0.02 284);
-  --deep-sage: oklch(0.72 0.10 288);
-  --sage: oklch(0.76 0.06 286);
-  --secondary: oklch(0.30 0.02 284);
-  --secondary-foreground: oklch(0.92 0.02 286);
-  --muted: oklch(0.30 0.02 284);
-  --muted-foreground: oklch(0.78 0.02 286);
-  --accent: oklch(0.80 0.08 92);
-  --accent-foreground: oklch(0.30 0.02 84);
-  --destructive: oklch(0.66 0.18 29);
-  --destructive-foreground: oklch(0.18 0.02 284);
-  --hairline: oklch(0.38 0.02 284);
-  --border: oklch(0.38 0.02 284);
-  --input: oklch(0.38 0.02 284);
-  --ring: oklch(0.70 0.10 288);
 }
 
 @layer base {

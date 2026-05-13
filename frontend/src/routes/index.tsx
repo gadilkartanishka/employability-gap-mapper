@@ -6,7 +6,6 @@ import { FeatureGridSection } from "@/components/site/FeatureGridSection";
 import { EvidenceSection } from "@/components/site/EvidenceSection";
 import { PersonasSection } from "@/components/site/PersonasSection";
 import { CtaFooterSection } from "@/components/site/CtaFooterSection";
-import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -37,7 +36,6 @@ function Index() {
       <EvidenceSection />
       <PersonasSection />
       <CtaFooterSection />
-      <ThemeToggle />
     </main>
   );
 }

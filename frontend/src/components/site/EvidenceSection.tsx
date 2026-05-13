@@ -8,7 +8,7 @@ export function EvidenceSection() {
   const { ref, inView } = useInViewOnce<HTMLElement>(0.2);
 
   return (
-    <section id="evidence" className={`relative hairline-b bg-secondary/40 overflow-hidden ${inView ? "motion-running" : "motion-paused"}`} ref={ref}>
+    <section id="results" className={`relative hairline-b bg-secondary/40 overflow-hidden ${inView ? "motion-running" : "motion-paused"}`} ref={ref}>
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -21,8 +21,8 @@ export function EvidenceSection() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 py-24 md:py-32 grid lg:grid-cols-12 gap-14 items-center">
         {/* left — front-facing report card */}
-        <div className={`lg:col-span-5 relative h-[440px] md:h-[520px] flex items-center justify-center ${inView ? "pop-left" : "pre-reveal"}`}>
-          <div className="relative z-10 w-[290px] h-[380px] hairline bg-card shadow-[0_18px_35px_rgba(65,70,110,0.10)] hover-tilt float-soft">
+        <div className={`lg:col-span-5 relative h-[380px] md:h-[450px] flex items-center justify-center ${inView ? "pop-left" : "pre-reveal"}`}>
+          <div className="relative z-10 w-[240px] h-[320px] hairline bg-card shadow-[0_18px_35px_rgba(65,70,110,0.10)] hover-tilt float-soft">
             <div className="p-5 h-full flex flex-col">
               <div className="flex items-center justify-between mb-4">
                 <div className="w-2 h-2 bg-deep-sage" />

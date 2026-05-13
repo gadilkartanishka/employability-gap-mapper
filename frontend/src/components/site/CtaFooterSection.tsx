@@ -7,7 +7,7 @@ export function CtaFooterSection() {
   const { ref, inView } = useInViewOnce<HTMLElement>(0.2);
 
   return (
-    <section id="cta" ref={ref} className={`relative ${inView ? "motion-running" : "motion-paused"}`}>
+    <section id="reports" ref={ref} className={`relative ${inView ? "motion-running" : "motion-paused"}`}>
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none drift-bg" />
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-24 md:py-32 relative">
         <div className="max-w-3xl fade-up">
