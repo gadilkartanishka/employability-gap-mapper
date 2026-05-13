@@ -25,7 +25,7 @@ const PERSONAS = [
 function Shape({ kind }: { kind: "sphere" | "pyramid" | "cube" }) {
   if (kind === "sphere")
     return (
-      <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1">
+      <svg viewBox="0 0 120 120" className="w-full h-full float-soft" fill="none" stroke="currentColor" strokeWidth="1">
         <circle cx="60" cy="60" r="40" />
         <ellipse cx="60" cy="60" rx="40" ry="14" />
         <ellipse cx="60" cy="60" rx="40" ry="28" />
@@ -35,7 +35,7 @@ function Shape({ kind }: { kind: "sphere" | "pyramid" | "cube" }) {
     );
   if (kind === "pyramid")
     return (
-      <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1">
+      <svg viewBox="0 0 120 120" className="w-full h-full float-soft-delay" fill="none" stroke="currentColor" strokeWidth="1">
         <path d="M60 18 L20 96 L100 96 Z" />
         <path d="M60 18 L60 96" strokeDasharray="2 3" />
         <path d="M20 96 L100 96" />
@@ -45,7 +45,7 @@ function Shape({ kind }: { kind: "sphere" | "pyramid" | "cube" }) {
       </svg>
     );
   return (
-    <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1">
+    <svg viewBox="0 0 120 120" className="w-full h-full float-soft" fill="none" stroke="currentColor" strokeWidth="1">
       <path d="M30 38 L60 22 L90 38 L90 86 L60 102 L30 86 Z" />
       <path d="M30 38 L60 54 L90 38" />
       <path d="M60 54 L60 102" />
@@ -58,7 +58,7 @@ export function PersonasSection() {
   const { ref, inView } = useInViewOnce<HTMLElement>(0.25);
 
   return (
-    <section id="personas" className="hairline-b" ref={ref}>
+    <section id="personas" className={`hairline-b ${inView ? "motion-running" : "motion-paused"}`} ref={ref}>
       <div className="mx-auto max-w-[1320px] px-6 md:px-10 py-28 md:py-36">
         <div className="flex items-center gap-3 mb-5">
           <span className="font-mono text-[10px] text-sage">05</span>
@@ -76,7 +76,7 @@ export function PersonasSection() {
           {PERSONAS.map((p, i) => (
             <div
               key={p.role}
-              className={`p-7 md:p-8 ${i < 2 ? "md:hairline-r" : ""} ${i === 0 ? "max-md:hairline-b" : ""} ${i === 1 ? "max-md:hairline-b" : ""} ${inView ? (i === 0 ? "pop-left" : i === 1 ? "pop-up" : "pop-right") : "pre-reveal"}`}
+              className={`p-7 md:p-8 hover-lift ${i < 2 ? "md:hairline-r" : ""} ${i === 0 ? "max-md:hairline-b" : ""} ${i === 1 ? "max-md:hairline-b" : ""} ${inView ? (i === 0 ? "pop-left" : i === 1 ? "pop-up" : "pop-right") : "pre-reveal"}`}
               style={{ animationDelay: `${i * 0.14}s` }}
             >
               <div className="w-22 h-22 md:w-24 md:h-24 text-sage mb-6">

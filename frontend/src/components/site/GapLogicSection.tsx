@@ -24,7 +24,7 @@ export function GapLogicSection() {
   }, [hasEnteredView]);
 
   return (
-    <section id="logic" className="hairline-b" ref={sectionRef}>
+    <section id="logic" className={`hairline-b ${hasEnteredView ? "motion-running" : "motion-paused"}`} ref={sectionRef}>
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-24 md:py-32">
         <div className="flex items-center gap-3 mb-12">
           <span className="font-mono text-[11px] text-sage">02</span>
@@ -35,8 +35,8 @@ export function GapLogicSection() {
 
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           {/* kinetic typography */}
-          <div className={`lg:col-span-5 scene relative h-[320px] lg:h-[380px] hairline bg-card overflow-hidden ${hasEnteredView ? "pop-left" : "pre-reveal"}`}>
-            <div className="absolute inset-0 grid-bg opacity-30" />
+          <div className={`lg:col-span-5 scene relative h-[320px] lg:h-[380px] hairline bg-card overflow-hidden hover-tilt ${hasEnteredView ? "pop-left" : "pre-reveal"}`}>
+            <div className="absolute inset-0 grid-bg opacity-30 drift-bg" />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
               <div className={hasEnteredView ? "reveal-seq" : "reveal-hidden"}>
                 <div
@@ -65,7 +65,7 @@ export function GapLogicSection() {
 
           {/* formula */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
-            <div className={`hairline bg-card h-[320px] lg:h-[380px] p-6 md:p-7 flex flex-col ${hasEnteredView ? "pop-right" : "pre-reveal"}`} style={{ animationDelay: "0.12s" }}>
+            <div className={`hairline bg-card h-[320px] lg:h-[380px] p-6 md:p-7 flex flex-col hover-lift ${hasEnteredView ? "pop-right" : "pre-reveal"}`} style={{ animationDelay: "0.12s" }}>
               <h2 className="text-[34px] md:text-[44px] leading-[1.05] tracking-[-0.02em] text-ink mb-6">
                 One number says it all.
               </h2>
@@ -77,11 +77,11 @@ export function GapLogicSection() {
                 72% of high-demand market skills are currently missing from this sample CSE syllabus.
               </p>
               <div className="mt-5 grid grid-cols-2 gap-3">
-                <div className="hairline p-3">
+                <div className="hairline p-3 hover-lift">
                   <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Covered</div>
                   <div className="mt-1 text-[20px] font-semibold text-ink">28%</div>
                 </div>
-                <div className="hairline p-3">
+                <div className="hairline p-3 hover-lift">
                   <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Updated</div>
                   <div className="mt-1 text-[20px] font-semibold text-ink">7 days</div>
                 </div>

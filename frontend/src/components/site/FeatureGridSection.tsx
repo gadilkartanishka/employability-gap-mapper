@@ -1,6 +1,6 @@
 function ScannerIcon() {
   return (
-    <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1">
+    <svg viewBox="0 0 120 120" className="w-full h-full float-soft" fill="none" stroke="currentColor" strokeWidth="1">
       <path d="M30 20 L75 20 L90 35 L90 100 L30 100 Z" />
       <path d="M75 20 L75 35 L90 35" />
       <line x1="42" y1="48" x2="78" y2="48" />
@@ -16,7 +16,7 @@ function ScannerIcon() {
 
 function CrawlerIcon() {
   return (
-    <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1">
+    <svg viewBox="0 0 120 120" className="w-full h-full float-soft" fill="none" stroke="currentColor" strokeWidth="1">
       <circle cx="60" cy="60" r="36" />
       <ellipse cx="60" cy="60" rx="36" ry="14" />
       <ellipse cx="60" cy="60" rx="14" ry="36" />
@@ -32,7 +32,7 @@ function CrawlerIcon() {
 
 function PipelineIcon() {
   return (
-    <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1">
+    <svg viewBox="0 0 120 120" className="w-full h-full float-soft-delay" fill="none" stroke="currentColor" strokeWidth="1">
       <rect x="14" y="34" width="28" height="52" />
       <rect x="78" y="34" width="28" height="52" />
       <path d="M42 60 C 55 60, 65 60, 78 60" />
@@ -45,7 +45,7 @@ function PipelineIcon() {
 
 function GaugeIcon() {
   return (
-    <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1">
+    <svg viewBox="0 0 120 120" className="w-full h-full float-soft" fill="none" stroke="currentColor" strokeWidth="1">
       <path d="M20 80 A 40 40 0 0 1 100 80" />
       <line x1="20" y1="80" x2="100" y2="80" />
       <line x1="60" y1="80" x2="84" y2="46" strokeWidth="1.4" />
@@ -92,7 +92,7 @@ export function FeatureGridSection() {
   const { ref, inView } = useInViewOnce<HTMLElement>(0.2);
 
   return (
-    <section id="features" className="hairline-b" ref={ref}>
+    <section id="features" className={`hairline-b ${inView ? "motion-running" : "motion-paused"}`} ref={ref}>
       <div className="mx-auto max-w-[1320px] px-6 md:px-10 py-28 md:py-36">
         <div className="flex items-end justify-between gap-8 flex-wrap mb-20">
           <div>
@@ -114,7 +114,7 @@ export function FeatureGridSection() {
           {FEATURES.map((f, i) => (
             <div
               key={f.n}
-              className={`p-7 md:p-8 group ${i % 2 === 0 ? "md:hairline-r" : ""} ${i < 2 ? "hairline-b" : ""} hover:bg-secondary/70 transition-colors ${inView ? (i % 4 === 0 ? "pop-left" : i % 4 === 1 ? "pop-right" : i % 4 === 2 ? "pop-up" : "pop-down") : "pre-reveal"}`}
+              className={`p-7 md:p-8 group hover-lift ${i % 2 === 0 ? "md:hairline-r" : ""} ${i < 2 ? "hairline-b" : ""} hover:bg-secondary/70 transition-colors ${inView ? (i % 4 === 0 ? "pop-left" : i % 4 === 1 ? "pop-right" : i % 4 === 2 ? "pop-up" : "pop-down") : "pre-reveal"}`}
               style={{ animationDelay: `${i * 0.12}s` }}
             >
               <div className="flex items-start justify-between mb-6">
