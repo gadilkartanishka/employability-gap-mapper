@@ -4,11 +4,18 @@ __pycache__/
 .DS_Store
 *.egg-info/
 .env
+.env.*
+.env.local
 data/raw_jobs/
 data/processed/
 data/syllabi/
 app.db
+*.sqlite3
 uploads/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
 
 # Frontend build/deps
 frontend/node_modules/
