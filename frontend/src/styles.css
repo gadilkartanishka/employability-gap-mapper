@@ -371,3 +371,48 @@
     box-shadow: none !important;
   }
 }
+
+@keyframes pathReveal {
+  from { stroke-dasharray: 0 600; }
+  to { stroke-dasharray: 600 0; }
+}
+
+@keyframes dashDraw {
+  from { stroke-dashoffset: 160; opacity: 0; }
+  to { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes cellIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes segmentIn {
+  from { opacity: 0; stroke-dasharray: 0 999; }
+  to { opacity: 1; }
+}
+
+@keyframes growBar {
+  from { width: 0; }
+}
+
+/* Internal frontend: soft-corner language */
+.internal-soft :where(
+  button,
+  input,
+  select,
+  textarea,
+  article,
+  section,
+  aside,
+  nav,
+  [role="button"],
+  [class*="rounded"],
+  [class*="border"]
+) {
+  border-radius: 16px;
+}
+
+.internal-soft :where(header, main) {
+  border-radius: 18px;
+}
